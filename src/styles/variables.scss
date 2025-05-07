@@ -1,8 +1,15 @@
-
 $primary: #5563A2; 
 :root {
     --bs-table-bg: #263c69;
     --bg-main: #F4F6FA
 }
 
-@import "bootstrap/scss/bootstrap"; 
+.main-content {
+  background-color: var(--bg-main);
+}
+
+.sidebar {
+  width: 200px;
+}
+
+@import "bootstrap/scss/bootstrap";

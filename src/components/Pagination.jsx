@@ -8,10 +8,10 @@ export const Pagination = () => {
   return (
     <div className="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-end align-items-center mt-3 gap-2">
       <ButtonGroup>
-        <Button variant="link" disabled={page === 1} onClick={prevPage}>
+        <Button variant="link" disabled={page === 1} onClick={prevPage} aria-label="Página anterior">
           « Prev
         </Button>
-        <Button variant="link" disabled={page === totalPages} onClick={nextPage}>
+        <Button variant="link" disabled={page === totalPages} onClick={nextPage} aria-label="Página siguiente">
           Next »
         </Button>
       </ButtonGroup>

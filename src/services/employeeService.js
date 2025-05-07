@@ -5,7 +5,6 @@ export async function fetchEmployees() {
   const response = await fetch(BASE_URL);
   const json = await response.json();
 
-  console.log('Respuesta del backend:', json);
 
   if (!response.ok) {
     throw new Error(`Error al obtener empleados: ${response.status} ${response.statusText}`);

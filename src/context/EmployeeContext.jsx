@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect, useCallback } from 'react';
 import { fetchEmployees } from '../services/employeeService';
+import { filterEmployeesBySearch, paginateEmployees } from '../utils/employeeUtils';
 
 export const EmployeeContext = createContext();
 
@@ -26,20 +27,10 @@ export function EmployeeProvider({ children }) {
   }, []);
 
   const recalc = useCallback(() => {
-
-    let filtered = all;
-    
-    if (search.trim()) {
-      filtered = all.filter((e) =>
-        e.id.toString().includes(search.trim())
-    );
-  }
-  
-  const start = (page - 1) * perPage;
-  setVisible(filtered.slice(start, start + perPage));
-
+    const filtered = filterEmployeesBySearch(all, search);
+    const paginated = paginateEmployees(filtered, page, perPage);
+    setVisible(paginated);
   }, [all, page, search]);
-  
 
   useEffect(() => {
     recalc();
@@ -52,20 +43,18 @@ export function EmployeeProvider({ children }) {
   };
 
   const totalPages = Math.ceil(
-    all.filter((e) => e.id.toString().includes(search || '')).length / perPage
+    filterEmployeesBySearch(all, search).length / perPage
   );
 
   const nextPage = () => {
     if (page < totalPages) {
-      const np = page + 1;
-      setPage(np);
+      setPage(page + 1);
     }
   };
 
   const prevPage = () => {
     if (page > 1) {
-      const np = page - 1;
-      setPage(np);
+      setPage(page - 1);
     }
   };
 
@@ -87,6 +76,5 @@ export function EmployeeProvider({ children }) {
   >
     {children}
   </EmployeeContext.Provider>
-  
   );
 }

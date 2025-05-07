@@ -7,7 +7,7 @@ export const TableHeader = ({ headerGroups, setSorting }) => (
     {headerGroups.map(headerGroup => (
       <tr key={headerGroup.id}>
         {headerGroup.headers.map(header => (
-          <th key={header.id} style={{ cursor: 'pointer' }}>
+          <th key={header.id} style={{ cursor: 'pointer' }} scope="col">
             {flexRender(header.column.columnDef.header, header.getContext())}
             {' '}
             <span onClick={() => setSorting([{ id: header.column.id, desc: false }])}>

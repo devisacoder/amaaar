@@ -32,3 +32,5 @@ export const EmployeeTable = () => {
     </div>
   );
 };
+
+export default EmployeeTable;
