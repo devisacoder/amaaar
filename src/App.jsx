@@ -1,11 +1,16 @@
-import './App.css'
+import React from 'react';
+import { EmployeeProvider } from './context/EmployeeContext';
+import { MainContent } from './components/MainContext';
+import { Sidebar } from './components/Sidebar'
+import './styles/variables.scss'; 
 
-function App() {
+export default function App() {
   return (
-    <>
-
-    </>
-  )
+      <EmployeeProvider>
+        <div className="d-flex vh-100">
+          <Sidebar />
+          <MainContent />
+        </div>
+      </EmployeeProvider>
+  );
 }
-
-export default App

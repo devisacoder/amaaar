@@ -1,0 +1,22 @@
+.h2Eemployees {
+    cursor: pointer;
+    font-size: 2rem; 
+    font-family: sans-serif;
+    font-weight: 600;
+    color: rgb(83, 83, 83);
+    border-bottom: 0.5px solid #e0e0e0;
+    margin-bottom: 0;
+  }
+  
+  .h2Eemployees:hover {
+    color: #5563A2;
+    border-bottom: 0.5px solid #5563A2;
+  }
+  
+  @media (max-width: 576px) {
+    .h2Eemployees {
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+  

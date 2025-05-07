@@ -1,0 +1,100 @@
+.tableHeader th {
+  background-color: #F4F6FA !important;
+  border: none !important;
+  color: rgb(83, 83, 83) !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.75rem 1rem;
+}
+
+.tableBody td {
+  text-align: center;
+  border: none !important;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.tableBody tr {
+  border-bottom: 0.1px solid #eeeeee;
+}
+
+.tableHeader th {
+  background-color: #F4F6FA !important;
+  border: none !important;
+  color: rgb(83, 83, 83) !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.75rem 1rem;
+}
+
+.tableBody td {
+  text-align: center;
+  border: none !important;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.tableBody tr {
+  border-bottom: 0.1px solid #eeeeee;
+}
+
+.tableResponsive {
+  overflow-x: auto;  
+  -webkit-overflow-scrolling: touch; 
+}
+
+.table {
+  width: 100%; 
+  table-layout: fixed;
+}
+
+.table th, .table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@media (max-width: 576px) {
+  .tableHeader th,
+  .tableBody td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}
+
+
+.table {
+  width: 100%; 
+  table-layout: fixed;
+}
+
+.table th, .table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@media (max-width: 480px) {
+  .tableBody td,
+  .tableHeader th {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .tableBody td {
+    max-width: 120px;
+  }
+
+  .tableBody td,
+  .tableHeader th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
